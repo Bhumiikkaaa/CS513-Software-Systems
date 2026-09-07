@@ -1,0 +1,18 @@
+
+#include <stdio.h>
+#include <fcntl.h>
+#include <unistd.h>
+int main()
+{
+	int fd;
+	fd = creat("newfile.txt",0644);
+	if(fd==-1)
+	{
+		perror("creat");
+		return 1;
+	}
+	printf("File created successfully.\n");
+	printf("File descriptor value: %d\n", fd);
+	close(fd);
+	return 0;
+}
