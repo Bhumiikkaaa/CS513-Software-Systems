@@ -21,3 +21,7 @@ day_7/copy_file
 day_8/read_lines
 day_9/file_info
 day_10/lseek_write
+day_11/dup_file
+day_11/dup2_file
+day_11/fcntl_file
+day_11/tcntl_file
