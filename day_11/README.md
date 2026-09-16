@@ -19,11 +19,6 @@ Uses `dup2()` to duplicate a file descriptor to a specified file descriptor numb
 ### 3. fcntl_file.c
 
 Uses `fcntl()` with `F_DUPFD` to duplicate a file descriptor and append data using both descriptors.
-
-### 4. opening_mode.c
-
-Uses `fcntl()` with `F_GETFL` to find out whether a file was opened in read-only, write-only, or read-write mode.
-
 ## Important Concepts
 
 ### dup()
@@ -106,41 +101,6 @@ Therefore, data written through either duplicated descriptor is appended to the 
 
 Running the program multiple times will append additional data each time.
 
-## Finding the Opening Mode
-
-The `opening_mode.c` program uses:
-
-```c
-flags = fcntl(fd, F_GETFL);
-```
-
-`F_GETFL` retrieves the file status flags associated with the open file description.
-
-The access mode is extracted using:
-
-```c
-flags & O_ACCMODE
-```
-
-The result can be compared with:
-
-```c
-O_RDONLY
-O_WRONLY
-O_RDWR
-```
-
-Example:
-
-```c
-if ((flags & O_ACCMODE) == O_RDONLY)
-    printf("File is opened in read-only mode\n");
-else if ((flags & O_ACCMODE) == O_WRONLY)
-    printf("File is opened in write-only mode\n");
-else if ((flags & O_ACCMODE) == O_RDWR)
-    printf("File is opened in read-write mode\n");
-```
-
 ## Commands Used
 
 ### dup()
@@ -221,26 +181,6 @@ Check contents:
 cat file3
 ```
 
-### Opening Mode
-
-Create the source file:
-
-```bash
-nano opening_mode.c
-```
-
-Compile:
-
-```bash
-gcc opening_mode.c -o opening_mode
-```
-
-Run:
-
-```bash
-./opening_mode
-```
-
 ## Checking File Contents
 
 The files can also be inspected byte by byte:
@@ -272,12 +212,6 @@ Duplicate FD: 10
 ```text
 Original FD : 3
 Duplicate FD: 4
-```
-
-### Opening Mode
-
-```text
-File is opened in read-write mode
 ```
 
 ## Key Learning
