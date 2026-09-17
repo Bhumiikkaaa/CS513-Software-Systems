@@ -26,3 +26,4 @@ day_11/dup2_file
 day_11/fcntl_file
 day_11/tcntl_file
 day_12/opening_mode
+day_13/select_stdin
