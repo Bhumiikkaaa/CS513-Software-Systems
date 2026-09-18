@@ -6,7 +6,6 @@ day_3/file2.txt
 day_3/file3.txt
 day_3/file4.txt
 day_3/newfile.txt
-
 day_4/open_file
 day_4/excl_experiment
 day_4/existing.txt
@@ -29,3 +28,14 @@ day_12/opening_mode
 day_13/select_stdin
 day_14/file_type
 day_15/environment
+day_16/read_lock
+day_16/write_lock
+day_17/ticket_init
+day_17/ticket_reserve
+day_18/record_init
+day_18/record_lock
+day_19/getpid_time
+day_20/priority
+day_16/lockfile
+day_17/ticket.txt
+day_18/record.txt
